@@ -1,0 +1,76 @@
+﻿@model IEnumerable<WebApplication7.Models.ChuyenBay>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaChuyen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayKH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayKT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiemDen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiemDi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaHang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrangThai)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaChuyen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayKH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayKT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiemDen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiemDi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaHang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrangThai)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {id = item.MaChuyen }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.MaChuyen })
+        </td>
+    </tr>
+}
+
+</table>
+@using (Html.BeginForm("Index", "ChuyenBay", FormMethod.Post))
+            {
+    <div><input type="text" name="strSearch" placeholder="Nhap diem den"></div>
+    
+    <div><button type="submit" >Tim kiem</button></div>
+            }
