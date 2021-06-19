@@ -121,7 +121,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CauThuController.cs" />
-    <Compile Include="Controllers\ChuyenBayController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\DALBanHuanLuyen.cs" />
     <Compile Include="DAL\DALCauThu.cs" />
@@ -132,7 +131,6 @@
     </Compile>
     <Compile Include="Models\BanHuanLuyen.cs" />
     <Compile Include="Models\CauThu.cs" />
-    <Compile Include="Models\Class1.cs" />
     <Compile Include="Models\DoiBong.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -172,10 +170,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\ChuyenBay\Index.cshtml" />
-    <Content Include="Views\ChuyenBay\Create.cshtml" />
-    <Content Include="Views\ChuyenBay\Edit.cshtml" />
-    <Content Include="Views\ChuyenBay\Delete.cshtml" />
     <Content Include="Views\CauThu\Index.cshtml" />
     <Content Include="Views\CauThu\Index2.cshtml" />
     <Content Include="Views\CauThu\Index3.cshtml" />
