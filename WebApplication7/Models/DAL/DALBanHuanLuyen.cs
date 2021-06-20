@@ -18,6 +18,7 @@ namespace WebApplication7.DAL
         //deleteBHL(string id) = Xoa 1 HLV theo id
         SqlConnection conn = KetNoi.connect();
         public List<BanHuanLuyen> getAllBHL()
+
         {
             string sql = "SELECT * FROM BanHuanLuyen";
             List<BanHuanLuyen> list = new List<BanHuanLuyen>();
