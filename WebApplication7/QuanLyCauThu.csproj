@@ -122,10 +122,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CauThuController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="DAL\DALBanHuanLuyen.cs" />
-    <Compile Include="DAL\DALCauThu.cs" />
-    <Compile Include="DAL\DALDoiBong.cs" />
-    <Compile Include="DAL\KetNoi.cs" />
+    <Compile Include="Models\DAL\DALBanHuanLuyen.cs" />
+    <Compile Include="Models\DAL\DALCauThu.cs" />
+    <Compile Include="Models\DAL\DALDoiBong.cs" />
+    <Compile Include="Models\DAL\KetNoi.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
