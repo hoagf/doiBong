@@ -121,6 +121,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CauThuController.cs" />
+    <Compile Include="Controllers\DoiBongController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Models\DAL\DALBanHuanLuyen.cs" />
     <Compile Include="Models\DAL\DALCauThu.cs" />
@@ -139,6 +140,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\tabledoibong.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -172,7 +174,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\CauThu\Index.cshtml" />
     <Content Include="Views\CauThu\Index2.cshtml" />
-    <Content Include="Views\CauThu\Index3.cshtml" />
+    <Content Include="Views\DoiBong\ListDoiBong.cshtml" />
+    <Content Include="Views\DoiBong\CreateDoiBong.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

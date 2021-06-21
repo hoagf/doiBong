@@ -13,6 +13,10 @@ namespace WebApplication7.Models
         string loGo;
         int namThanhLap;
 
+        public DoiBong()
+        {
+        }
+
         public DoiBong(string idClb, string tenClb, string quocGia, string loGo, int namThanhLap)
         {
             this.IdClb = idClb;
