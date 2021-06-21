@@ -120,7 +120,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\CauThuController.cs" />
+    <Compile Include="Controllers\HLVController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Models\DAL\DALBanHuanLuyen.cs" />
     <Compile Include="Models\DAL\DALCauThu.cs" />
@@ -170,13 +170,13 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\CauThu\Index.cshtml" />
-    <Content Include="Views\CauThu\Index2.cshtml" />
-    <Content Include="Views\CauThu\Index3.cshtml" />
+    <Content Include="Views\HLV\Index.cshtml" />
+    <Content Include="Views\HLV\Create.cshtml" />
+    <Content Include="Views\HLV\Details.cshtml" />
+    <Content Include="Views\HLV\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -1,11 +1,10 @@
 ﻿@model IEnumerable<WebApplication7.Models.BanHuanLuyen>
 
 @{
-    ViewBag.Title = "Index2";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Index";
 }
 
-<h2>Index2</h2>
+<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -63,12 +62,12 @@
             @Html.DisplayFor(modelItem => item.IdClb)
         </td>
         <td>
-            <img src="@Html.DisplayFor(modelItem => item.HinhAnh)" width="30px" height="30px"/>
+            @Html.DisplayFor(modelItem => item.HinhAnh)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Edit", "Edit", new { id = item.IdHlv }) |
+            @Html.ActionLink("Details", "Details", new { id = item.IdHlv }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.IdHlv })
         </td>
     </tr>
 }
