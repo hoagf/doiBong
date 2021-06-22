@@ -13,18 +13,23 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.IdClb)
+
+             @Html.DisplayNameFor(model => model.IdClb)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TenClb)
+
+             @Html.DisplayNameFor(model => model.TenClb)
         </th>
         <th>
+
             @Html.DisplayNameFor(model => model.QuocGia)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.LoGo)
+
+             @Html.DisplayNameFor(model => model.LoGo)
         </th>
         <th>
+
             @Html.DisplayNameFor(model => model.NamThanhLap)
         </th>
         <th></th>
@@ -44,14 +49,16 @@
         <td>
             <img alt="Qries" src="@Html.DisplayFor(modelItem => item.LoGo)"
                  width="90" height="70">
+
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.NamThanhLap)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
+            @Html.ActionLink("Edit", "Edit", new { id = item.IdClb }) |
+            @Html.ActionLink("Details", "Details", new { id = item.IdClb }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.IdClb })
         </td>
     </tr>
 }

@@ -175,11 +175,12 @@
     <Content Include="Views\CauThu\Index.cshtml" />
     <Content Include="Views\CauThu\Index2.cshtml" />
     <Content Include="Views\DoiBong\ListDoiBong.cshtml" />
+    <Content Include="Views\DoiBong\Edit.cshtml" />
+    <Content Include="Views\DoiBong\Details.cshtml" />
     <Content Include="Views\DoiBong\CreateDoiBong.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -38,6 +38,33 @@ namespace WebApplication7.Controllers
             }
             return View();
         }
-        
+        //xem chi tiet doi bong
+        public ActionResult Details(string id)
+        {
+            return View(db.getMotDoiBong(id));
+        }
+        //sua thong tin  doi bong
+        public ActionResult Edit(string id)
+        {
+            return View(db.getMotDoiBong(id));
+        }
+        [HttpPost]
+        public ActionResult Edit(DoiBong doibong)
+        {
+
+            if (ModelState.IsValid)
+            {
+                db.editDoiBong(doibong);
+                return RedirectToAction("ListDoiBong");
+            }
+            return View();
+
+        }
+        public ActionResult Delete(string id)
+        {
+            db.deleteDoiBong(id);
+            return RedirectToAction("ListDoiBong");
+        }
+
     }
 }
