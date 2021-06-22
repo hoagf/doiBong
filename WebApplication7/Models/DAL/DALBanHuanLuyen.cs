@@ -11,6 +11,7 @@ namespace WebApplication7.DAL
     {
         //Cac ham:
         //getAllBHL() = lay tat ca HLV
+        //SearchName() = tim kiem theo ten
         //getBHLCuaCLB(string id) = Lay tat ca HLV cua CLB
         //getMotBHL(string id) = lay ra 1 HLV theo id
         //addBHL(BanHuanLuyen bhl) = Them moi 1 HLV
@@ -21,6 +22,25 @@ namespace WebApplication7.DAL
 
         {
             string sql = "SELECT * FROM BanHuanLuyen";
+            List<BanHuanLuyen> list = new List<BanHuanLuyen>();
+            conn.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = sql;
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                list.Add(new BanHuanLuyen(reader.GetInt32(0), reader.GetString(1),
+                    reader.GetString(2), reader.GetInt32(3), reader.GetString(4),
+                        reader.GetString(5), reader.GetString(6), reader.GetString(7)));
+            }
+
+            conn.Close();
+            return list;
+        }
+        public List<BanHuanLuyen> SearchName(string name)
+        {
+            string sql = "SELECT * FROM BanHuanLuyen WHERE BanHuanLuyen.tenHlv LIKE N'%"+name+"%'";
             List<BanHuanLuyen> list = new List<BanHuanLuyen>();
             conn.Open();
             SqlCommand cmd = new SqlCommand();

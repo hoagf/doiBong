@@ -11,6 +11,7 @@ namespace WebApplication7.DAL
     {
         //Cac ham:
         //getAllCauThu() = lay tat ca cau thu
+        //SearchName() = tim kiem theo ten
         //getCauThuClb(string idClb) = Lay tat ca cau thu cua CLB
         //getMotCauThu(string id) = lay ra 1 cau thu theo id
         //addCauThu(CauThu ct) = Them moi 1 cau thu
@@ -36,6 +37,27 @@ namespace WebApplication7.DAL
                     reader.GetInt32(8), reader.GetString(9), reader.GetString(10))) ;
             }
             
+            conn.Close();
+            return list;
+        }
+        public List<CauThu> SearchName(string name)
+        {
+            string sql = "SELECT * FROM CauThu WHERE CauThu.tenCauthu LIKE N'%"+name+"%'";
+            List<CauThu> list = new List<CauThu>();
+            conn.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = sql;
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                list.Add(new CauThu(reader.GetInt32(0), reader.GetString(1),
+                    reader.GetString(2), reader.GetString(3), reader.GetString(4),
+                    reader.GetInt32(5), reader.GetInt32(6), reader.GetInt32(7),
+                    reader.GetInt32(8), reader.GetString(9), reader.GetString(10)));
+            }
+
             conn.Close();
             return list;
         }

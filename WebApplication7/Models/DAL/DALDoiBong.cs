@@ -9,6 +9,13 @@ namespace WebApplication7.DAL
 {
     public class DADoiBong
     {
+        //Cac ham:
+        //getAllDoiBong() = lay tat ca doi bong
+        //SearchName() = tim kiem theo ten
+        //getMotDoiBong(string id) = lay ra 1 clb theo id
+        //addClb(DoiBong ct) = Them moi 1 doiBong
+        //editDoiBong(Doibong ct) = Sua thong tin doiBong
+        //deleteDoibong(string id) = Xoa 1 doiBong theo id
         SqlConnection conn = KetNoi.connect();
         public List<DoiBong> getAllDoiBong()
         {
@@ -27,6 +34,24 @@ namespace WebApplication7.DAL
             conn.Close();
             return list;
         }
+        public List<DoiBong> searchName(String name)
+        {
+            string sql = "SELECT * FROM DoiBong WHERE DoiBong.tenClb LIKE N'%"+name+"%'";
+            List<DoiBong> list = new List<DoiBong>();
+            conn.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = sql;
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                list.Add(new DoiBong(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetInt32(4)));
+            }
+
+            conn.Close();
+            return list;
+        }
+
         public DoiBong getMotDoiBong(string id)
         {
             string sql = "SELECT * FROM DoiBong WHERE DoiBong.idClb = '" + id + "'";
