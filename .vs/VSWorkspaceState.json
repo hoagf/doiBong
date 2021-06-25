@@ -5,8 +5,9 @@
     "\\WebApplication7\\Controllers",
     "\\WebApplication7\\Models",
     "\\WebApplication7\\Views",
-    "\\WebApplication7\\Views\\DoiBong"
+    "\\WebApplication7\\Views\\DoiBong",
+    "\\WebApplication7\\Views\\HLV"
   ],
-  "SelectedNode": "\\QuanLyCauThu.sln",
+  "SelectedNode": "\\WebApplication7\\Views\\DoiBong\\CreateDoiBong.cshtml",
   "PreviewInSolutionExplorer": false
 }

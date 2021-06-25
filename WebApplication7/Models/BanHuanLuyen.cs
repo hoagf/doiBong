@@ -16,6 +16,7 @@ namespace WebApplication7.Models
         string idClb;
         string hinhAnh;
 
+        public BanHuanLuyen() { }
         public BanHuanLuyen(int idHlv, string tenHlv, string quocTich, int namSinh, string gioiTinh, string chucVu, string idClb, string hinhAnh)
         {
             this.IdHlv = idHlv;
