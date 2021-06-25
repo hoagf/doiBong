@@ -16,7 +16,7 @@ namespace WebApplication7
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "CauThu", action = "Index2", id = UrlParameter.Optional }
+                defaults: new { controller = "HLV", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

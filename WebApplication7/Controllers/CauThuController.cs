@@ -41,7 +41,7 @@ namespace WebApplication7.Controllers
             //bhl.deleteBHL("5");
             return View(list);
         }
-        public ActionResult Index3()
+       /* public ActionResult DoiBong()
         {
 
             List<DoiBong> list = db.getAllDoiBong();
@@ -52,7 +52,7 @@ namespace WebApplication7.Controllers
             // db.editDoiBong(b);
            // db.deleteDoiBong("HP");
             return View(list);
-        }
+        }*/
 
     }
 }

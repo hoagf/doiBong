@@ -121,6 +121,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CauThuController.cs" />
+    <Compile Include="Controllers\DoiBongController.cs" />
+    <Compile Include="Controllers\HLVController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Models\DAL\DALBanHuanLuyen.cs" />
     <Compile Include="Models\DAL\DALCauThu.cs" />
@@ -173,6 +175,14 @@
     <Content Include="Views\CauThu\Index.cshtml" />
     <Content Include="Views\CauThu\Index2.cshtml" />
     <Content Include="Views\CauThu\Index3.cshtml" />
+    <Content Include="Views\DoiBong\CreateDoiBong.cshtml" />
+    <Content Include="Views\DoiBong\Details.cshtml" />
+    <Content Include="Views\DoiBong\Edit.cshtml" />
+    <Content Include="Views\DoiBong\ListDoiBong.cshtml" />
+    <Content Include="Views\HLV\Create.cshtml" />
+    <Content Include="Views\HLV\Details.cshtml" />
+    <Content Include="Views\HLV\Edit.cshtml" />
+    <Content Include="Views\HLV\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
