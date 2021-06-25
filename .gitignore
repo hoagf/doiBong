@@ -1,25 +1,25 @@
-#packages
-packages/
-
-
-
-# forder
-WebApplication7/App_Start/
-WebApplication7/Bin
-WebApplication7/Content
-WebApplication7/fonts
-WebApplication7/obj
-WebApplication7/Properties
-WebApplication7/Scripts
-
-# file
-favicon.ico
-Global.asax
-Global.asax.cs
-packages.config
-QuanLyCauThu.csproj
-QuanLyCauThu.csproj.user
-Web.config
-Web.Debug.config
-Web.Release.config
-QuanLyCauThu.sln
+##packages
+#packages/
+#
+#
+#
+## forder
+#WebApplication7/App_Start/
+#WebApplication7/Bin
+#WebApplication7/Content
+#WebApplication7/fonts
+#WebApplication7/obj
+#WebApplication7/Properties
+#WebApplication7/Scripts
+#
+## file
+#favicon.ico
+#Global.asax
+#Global.asax.cs
+#packages.config
+#QuanLyCauThu.csproj
+#QuanLyCauThu.csproj.user
+#Web.config
+#Web.Debug.config
+#Web.Release.config
+#QuanLyCauThu.sln
