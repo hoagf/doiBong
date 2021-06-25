@@ -2,12 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\WebApplication7",
-    "\\WebApplication7\\Controllers",
-    "\\WebApplication7\\Models",
-    "\\WebApplication7\\Views",
     "\\WebApplication7\\Views\\DoiBong",
     "\\WebApplication7\\Views\\HLV"
   ],
-  "SelectedNode": "\\WebApplication7\\Views\\DoiBong\\CreateDoiBong.cshtml",
+  "SelectedNode": "\\.gitignore",
   "PreviewInSolutionExplorer": false
 }
