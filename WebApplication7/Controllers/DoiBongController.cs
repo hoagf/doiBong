@@ -41,7 +41,8 @@ namespace WebApplication7.Controllers
         //xem chi tiet doi bong
         public ActionResult Details(string id)
         {
-            return RedirectToAction("Index", "HLV", new { @id = id });
+            
+            return RedirectToAction("Index", "HLV", new { @errorId = id});
         }
         //sua thong tin  doi bong
         public ActionResult Edit(string id)
@@ -65,6 +66,7 @@ namespace WebApplication7.Controllers
             db.deleteDoiBong(id);
             return RedirectToAction("ListDoiBong");
         }
+       
 
     }
 }

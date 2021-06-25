@@ -13,46 +13,63 @@ namespace WebApplication7.Controllers
     {
         // GET: CauThu
         DALCauThu ct = new DALCauThu();
-        DALBanHuanLuyen bhl = new DALBanHuanLuyen();
-        DADoiBong db = new DADoiBong();
+
         public ActionResult Index()
         {
             List<CauThu> list = new List<CauThu>();
-            list = ct.getCauThuClb("HAGL");
-
-            //Debug.WriteLine("Haah");
-            CauThu sd = new CauThu(6, "Nguyen Trong Hoang", "VN", "RB", "Nam", 1100, 1988, 177, 77, "SLNA", "vfd");
-            //ct.addCauThu(sd);
-            // ct.editCauThu(sd);
-          //  ct.deleteCauThu("7");
+            list = ct.getAllCauThu();
            
             return View(list);
         }
-        public ActionResult Index2()
+
+        public ActionResult Details(string id)
         {
-            
-            List<BanHuanLuyen> list = new List<BanHuanLuyen>();
-            list = bhl.getAllBHL();
-            //BanHuanLuyen bh = bhl.getMotBHL("2");
-            //Debug.WriteLine(bh.ChucVu);
-            //Debug.WriteLine(bh.TenHlv);
-            //BanHuanLuyen bo = new BanHuanLuyen(4, "Choi Ju Young", "HQ", 1971, "Nam", "BS", "HAGL", "http://cds");
-            //bhl.editBHL(bo);
-            //bhl.deleteBHL("5");
-            return View(list);
+            return View(ct.getMotCauThu(id));
         }
-       /* public ActionResult DoiBong()
+
+        //Them cau thu
+        public ActionResult Create()
         {
 
-            List<DoiBong> list = db.getAllDoiBong();
-            //DoiBong a = db.getMotDoiBong("HAGL");
-            //Debug.WriteLine(a.TenClb);
-            // DoiBong b = new DoiBong("HP", "Hai Phong", "Viet Nam", "huhuh", 1955);
-            //db.addDoiBong(b);
-            // db.editDoiBong(b);
-           // db.deleteDoiBong("HP");
-            return View(list);
-        }*/
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create(CauThu cauthu)
+        {
+            ct.addCauThu(cauthu);
+            return RedirectToAction("Index");
+        }
 
+        public ActionResult Edit(string id)
+        {
+            return View(ct.getMotCauThu(id) );
+            
+        }
+
+        [HttpPost]
+        public ActionResult Edit(CauThu ct1)
+        {
+            ct.editCauThu(ct1);
+            
+            return RedirectToAction("Index");
+        }
+
+
+        //xoa cau thu--------------------------------------
+
+
+       
+
+        
+        public ActionResult Delete(String id)
+        {
+            ct.deleteCauThu(id);
+            return RedirectToAction("Index");
+        }
+
+
+     
+
+       
     }
 }

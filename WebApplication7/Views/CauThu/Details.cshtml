@@ -1,29 +1,30 @@
-﻿@model WebApplication7.Models.BanHuanLuyen
+﻿@model WebApplication7.Models.CauThu
 
 @{
     ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Details</h2>
 
 <div>
-    <h4>BanHuanLuyen</h4>
+    <h4>CauThu</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.IdHlv)
+            @Html.DisplayNameFor(model => model.IdCauThu)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.IdHlv)
+            @Html.DisplayFor(model => model.IdCauThu)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.TenHlv)
+            @Html.DisplayNameFor(model => model.TenCauThu)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TenHlv)
+            @Html.DisplayFor(model => model.TenCauThu)
         </dd>
 
         <dt>
@@ -35,11 +36,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NamSinh)
+            @Html.DisplayNameFor(model => model.ViTri)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.NamSinh)
+            @Html.DisplayFor(model => model.ViTri)
         </dd>
 
         <dt>
@@ -51,11 +52,35 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ChucVu)
+            @Html.DisplayNameFor(model => model.Luong)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ChucVu)
+            @Html.DisplayFor(model => model.Luong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NamSinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NamSinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChieuCao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChieuCao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CanNang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CanNang)
         </dd>
 
         <dt>
@@ -75,13 +100,8 @@
         </dd>
 
     </dl>
-    
 </div>
 <p>
-   
     @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
     @Html.ActionLink("Back to List", "Index")
-
 </p>
-
-<

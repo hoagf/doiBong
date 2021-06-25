@@ -84,9 +84,9 @@
             @Html.DisplayFor(modelItem => item.HinhAnh)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdCauThu }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdCauThu}) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdCauThu })
         </td>
     </tr>
 }

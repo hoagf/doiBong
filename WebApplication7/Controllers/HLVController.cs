@@ -15,7 +15,7 @@ namespace WebApplication7.Controllers
 
         public ActionResult Index()
         {
-            
+          
             return View(dAL.getAllBHL());
         }
         
@@ -50,5 +50,6 @@ namespace WebApplication7.Controllers
             dAL.deleteBHL(id);
            return RedirectToAction("Index");
         }
+      
     }
 }
