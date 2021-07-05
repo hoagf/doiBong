@@ -15,14 +15,8 @@ namespace WebApplication7.Controllers
         public ActionResult ListDoiBong()
         {
             List<DoiBong> list = db.getAllDoiBong();
-            //DoiBong a = db.getMotDoiBong("HAGL");
-            //Debug.WriteLine(a.TenClb);
-            // DoiBong b = new DoiBong("HP", "Hai Phong", "Viet Nam", "huhuh", 1955);
-            //db.addDoiBong(b);
-            // db.editDoiBong(b);
-            // db.deleteDoiBong("HP");
             return View(list);
-            return View();
+
         }
         public ActionResult CreateDoiBong()
         {
@@ -41,8 +35,8 @@ namespace WebApplication7.Controllers
         //xem chi tiet doi bong
         public ActionResult Details(string id)
         {
-            
-            return RedirectToAction("Index", "HLV", new { @errorId = id});
+            return View(db.getMotDoiBong(id));
+
         }
         //sua thong tin  doi bong
         public ActionResult Edit(string id)
@@ -66,7 +60,15 @@ namespace WebApplication7.Controllers
             db.deleteDoiBong(id);
             return RedirectToAction("ListDoiBong");
         }
-       
+        public ActionResult QuanLyHLV(string id)
+        {
 
+            return RedirectToAction("Index", "HLV", new { @errorId = id });
+        }
+        public ActionResult CauThuCLB(string id)
+        {
+
+            return RedirectToAction("Index", "CauThu", new { @errorId = id });
+        }
     }
 }

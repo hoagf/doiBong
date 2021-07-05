@@ -4,84 +4,132 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Đội bóng</title>
+    <style>
+        .wrapp {
+            width: 90%;
+            height: 600px;
+            margin-top: 10px;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 10px;
+        }
+
+        .photo {
+            width: 50%;
+            height: 400px;
+            float: left;
+            margin-top: 40px;
+        }
+
+        .wrapp-table {
+            width: 50%;
+            height: 500px;
+            float: left;
+            margin-top: 100px;
+            padding-left: 10%;
+        }
+
+        table {
+            width: 90%;
+            height: 300px;
+            margin-left: 5%;
+        }
+        /** css title*/
+        .wrapp-title {
+            width: 100%;
+            height: auto;
+            background-color: aquamarine;
+        }
+
+        .title1 {
+            width: 40%;
+            height: 2px;
+            border: solid 1px black;
+            float: left;
+        }
+
+        .title2 {
+            width: 20%;
+            float: left;
+        }
+
+        .title3 {
+            width: 40%;
+            height: 3px;
+            border: solid 1px black;
+            float: left;
+        }
+    </style>
+</head>
 
 <div>
-    <h4>BanHuanLuyen</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.IdHlv)
-        </dt>
+    <div>
 
-        <dd>
-            @Html.DisplayFor(model => model.IdHlv)
-        </dd>
+        <div class="wrapp">
+            <div style="height:25px"></div>
+            <div>
+                <h2 style="text-align:center;font-style:normal;">
+                    <b>Thông Tin Chi Tiết</b>
+                </h2>
+            </div>
+            <div class="photo">
+                <img src="@Html.DisplayFor(model => model.HinhAnh)" width="400px" height="400px"
+                     style="background-position: center center;background-repeat: no-repeat;display: block;
+                    margin-left: auto;margin-right: auto;object-fit: contain;" />
+                <h3 style="text-align:center; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; margin-top:30px">Hình ảnh</h3>
+            </div>
+            <div class="wrapp-table">
+                <table>
+                    <tr>
+                        <th>
+                            Tên
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.TenHlv)
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TenHlv)
-        </dt>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Quốc Tịch
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.QuocTich)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Năm Sinh
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.NamSinh)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Giới Tính
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.GioiTinh)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Chức Vụ
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.ChucVu)
+                        </td>
+                    </tr>
+                </table>
 
-        <dd>
-            @Html.DisplayFor(model => model.TenHlv)
-        </dd>
+            </div>
+        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.QuocTich)
-        </dt>
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.QuocTich)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NamSinh)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NamSinh)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.GioiTinh)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.GioiTinh)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ChucVu)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ChucVu)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IdClb)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IdClb)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.HinhAnh)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.HinhAnh)
-        </dd>
-
-    </dl>
-    
 </div>
-<p>
-   
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
-
+<p class="btn btn-default" style="text-align: right; margin-right: 200px">
+    @Html.ActionLink("Trở lại", "Index")
 </p>
-
-<

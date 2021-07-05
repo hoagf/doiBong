@@ -13,13 +13,22 @@ namespace WebApplication7.Controllers
     {
         // GET: CauThu
         DALCauThu ct = new DALCauThu();
-
-        public ActionResult Index()
+        //public ActionResult Index()
+        public ActionResult Index(string errorId)
         {
-            List<CauThu> list = new List<CauThu>();
-            list = ct.getAllCauThu();
-           
-            return View(list);
+            if(errorId == null)
+            {
+                List<CauThu> list = ct.getAllCauThu();
+                return View(list);
+            }
+            else
+            {
+                {
+                    List<CauThu> list = ct.getCauThuClb(errorId);
+                    return View(list);
+                }
+            }
+  
         }
 
         public ActionResult Details(string id)
@@ -56,9 +65,6 @@ namespace WebApplication7.Controllers
 
 
         //xoa cau thu--------------------------------------
-
-
-       
 
         
         public ActionResult Delete(String id)

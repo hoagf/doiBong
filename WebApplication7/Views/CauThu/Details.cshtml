@@ -4,104 +4,154 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Đội bóng</title>
+    <style>
+        .wrapp {
+            width: 90%;
+            height: 600px;
+            margin-top: 10px;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 10px;
+        }
 
-<h2>Details</h2>
+        .photo {
+            width: 50%;
+            height: 400px;
+            float: left;
+            margin-top: 40px;
+        }
 
+        .wrapp-table {
+            width: 50%;
+            height: 500px;
+            float: left;
+            margin-top: 100px;
+            padding-left: 10%;
+        }
+
+        table {
+            width: 90%;
+            height: 350px;
+            margin-left: 10%;
+        }
+        /** css title*/
+        .wrapp-title {
+            width: 100%;
+            height: auto;
+            background-color: aquamarine;
+        }
+
+        .title1 {
+            width: 40%;
+            height: 2px;
+            border: solid 1px black;
+            float: left;
+        }
+
+        .title2 {
+            width: 20%;
+            float: left;
+        }
+
+        .title3 {
+            width: 40%;
+            height: 3px;
+            border: solid 1px black;
+            float: left;
+        }
+    </style>
+</head>
 <div>
-    <h4>CauThu</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.IdCauThu)
-        </dt>
+    <div>
+        <div class="wrapp">
+            <div style="height:25px"></div>
+            <div>
+                <h2 style="text-align:center;font-style:normal;">
+                    <b>Thông Tin Chi Tiết</b>
+                </h2>
+            </div>
+            <div class="photo">
+                <img src="@Html.DisplayFor(model => model.HinhAnh)" width="400px" height="400px"
+                     style="background-position: center center;background-repeat: no-repeat;display: block;
+                    margin-left: auto;margin-right: auto;object-fit: contain;" />
+                <h3 style="text-align:center; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; margin-top:30px">Hình ảnh</h3>
+            </div>
+            <div class="wrapp-table">
+                <table>
+                    <tr>
+                        <th>
+                            Tên Cầu Thủ
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.TenCauThu)
 
-        <dd>
-            @Html.DisplayFor(model => model.IdCauThu)
-        </dd>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Quốc Tịch
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.QuocTich)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Vị Trí
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.ViTri)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Giới Tính
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.GioiTinh)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Năm Sinh
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.NamSinh)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Chiều Cao
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.ChieuCao)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Cân Nặng
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.CanNang)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Lương
+                        </th>
+                        <td>
+                            @Html.DisplayFor(model => model.Luong)
+                        </td>
+                    </tr>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TenCauThu)
-        </dt>
+                </table>
 
-        <dd>
-            @Html.DisplayFor(model => model.TenCauThu)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.QuocTich)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.QuocTich)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ViTri)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ViTri)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.GioiTinh)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.GioiTinh)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Luong)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Luong)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NamSinh)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NamSinh)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ChieuCao)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ChieuCao)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CanNang)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CanNang)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IdClb)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IdClb)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.HinhAnh)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.HinhAnh)
-        </dd>
-
-    </dl>
+            </div>
+        </div>
+    </div>
+    
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
+<p class="btn btn-default" style="margin-top: 10px; text-align: right; margin-right: 200px">
+    @Html.ActionLink("Trở lại", "Index")
 </p>

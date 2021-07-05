@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
 
 namespace WebApplication7.Models
 {
@@ -28,14 +29,29 @@ namespace WebApplication7.Models
             this.IdClb = idClb;
             this.HinhAnh = hinhAnh;
         }
-
+        [Required(ErrorMessage = "Vui lòng nhập")]
+        [Display(Name = "ID")]
         public int IdHlv { get => idHlv; set => idHlv = value; }
+        [Required(ErrorMessage = "Vui lòng nhập")]
+        [Display(Name = "Tên Huấn Luyện Viên")]
         public string TenHlv { get => tenHlv; set => tenHlv = value; }
+        [Required(ErrorMessage = "Vui lòng nhập")]
+        [Display(Name = "Quốc Tịch")]
         public string QuocTich { get => quocTich; set => quocTich = value; }
+        [Required(ErrorMessage = "Vui lòng nhập")]
+        [Display(Name = "Năm Sinh")]
         public int NamSinh { get => namSinh; set => namSinh = value; }
+        [Required(ErrorMessage = "Vui lòng nhập")]
+        [Display(Name = "Giới Tính")]
         public string GioiTinh { get => gioiTinh; set => gioiTinh = value; }
+        [Required(ErrorMessage = "Vui lòng nhập")]
+        [Display(Name = "Chức Vụ")]
         public string ChucVu { get => chucVu; set => chucVu = value; }
+        [Required(ErrorMessage = "Vui lòng nhập")]
+        [Display(Name = "ID CLB")]
         public string IdClb { get => idClb; set => idClb = value; }
+        [Required(ErrorMessage = "Vui lòng nhập")]
+        [Display(Name = "Link Ảnh")]
         public string HinhAnh { get => hinhAnh; set => hinhAnh = value; }
     }
 }

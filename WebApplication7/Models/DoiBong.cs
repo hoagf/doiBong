@@ -8,11 +8,15 @@ namespace WebApplication7.Models
 {
     public class DoiBong
     {
+        
+        string idClb;
        
-        string idClb; 
         string tenClb;
+        
         string quocGia;
+        
         string loGo;
+        
         int namThanhLap;
 
         public DoiBong()
@@ -27,14 +31,19 @@ namespace WebApplication7.Models
             this.LoGo = loGo;
             this.NamThanhLap = namThanhLap;
         }
-        [Display(Name = "Tên")]
+        [Required(ErrorMessage = "Vui lòng nhập")]
+        [Display(Name = "ID")]
         public string IdClb { get => idClb; set => idClb = value; }
-        [Display(Name = "Tên Đầy đủ")]
+        [Required(ErrorMessage = "Vui lòng nhập")]
+        [Display(Name = "Tên CLB")]
         public string TenClb { get => tenClb; set => tenClb = value; }
+        [Required(ErrorMessage = "Vui lòng nhập")]
         [Display(Name = "Quốc gia")]
         public string QuocGia { get => quocGia; set => quocGia = value; }
-        [Display(Name = "Logo")]
+        [Required(ErrorMessage = "Vui lòng nhập")]
+        [Display(Name = "Link Logo")]
         public string LoGo { get => loGo; set => loGo = value; }
+        [Required(ErrorMessage = "Vui lòng nhập")]
         [Display(Name = "Năm thành lập")]
         public int NamThanhLap { get => namThanhLap; set => namThanhLap = value; }
     }

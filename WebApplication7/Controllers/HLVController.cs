@@ -13,10 +13,17 @@ namespace WebApplication7.Controllers
         // GET: HLV
         private DALBanHuanLuyen dAL = new DALBanHuanLuyen();
 
-        public ActionResult Index()
+        public ActionResult Index(string errorId) //
         {
-          
-            return View(dAL.getAllBHL());
+            if(errorId ==null)
+            {
+                return View(dAL.getAllBHL());
+            }
+            else
+            {
+                return View(dAL.getBHLCuaCLB(errorId));
+            }
+            //return View(dAL.getAllBHL());
         }
         
         public ActionResult Create(){
@@ -46,6 +53,12 @@ namespace WebApplication7.Controllers
             return RedirectToAction("Index");
         }
         public ActionResult Delete(string id)
+        {
+            dAL.deleteBHL(id);
+           return RedirectToAction("Index");
+        }
+        
+        public ActionResult getHLVCLB(string id)
         {
             dAL.deleteBHL(id);
            return RedirectToAction("Index");

@@ -5,67 +5,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!--<h2>ListDoiBong</h2>
-
-<p>
-    @Html.ActionLink("Create New", "CreateDoiBong")
-</p>
-<table class="table">
-    <tr>
-        <th>
-
-             @Html.DisplayNameFor(model => model.IdClb)
-        </th>
-        <th>
-
-             @Html.DisplayNameFor(model => model.TenClb)
-        </th>
-        <th>
-
-            @Html.DisplayNameFor(model => model.QuocGia)
-        </th>
-        <th>
-
-             @Html.DisplayNameFor(model => model.LoGo)
-        </th>
-        <th>
-
-            @Html.DisplayNameFor(model => model.NamThanhLap)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.IdClb)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TenClb)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.QuocGia)
-        </td>
-        <td>
-            <img alt="Qries" src="@Html.DisplayFor(modelItem => item.LoGo)"
-                 width="90" height="70">
-
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NamThanhLap)
-        </td>
-        <td>
-
-            @Html.ActionLink("Edit", "Edit", new { id = item.IdClb }) |
-            @Html.ActionLink("Details", "Details", new { id = item.IdClb }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.IdClb })
-        </td>
-    </tr>
-}
-
-</table> -->
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -73,7 +12,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Danh CLB</title>
+    <title>Danh sách CLB</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -249,64 +188,7 @@
             margin-top: 10px;
             font-size: 13px;
         }
-        /* Custom checkbox */
-        .custom-checkbox {
-            position: relative;
-        }
-
-            .custom-checkbox input[type="checkbox"] {
-                opacity: 0;
-                position: absolute;
-                margin: 5px 0 0 3px;
-                z-index: 9;
-            }
-
-            .custom-checkbox label:before {
-                width: 18px;
-                height: 18px;
-            }
-
-            .custom-checkbox label:before {
-                content: '';
-                margin-right: 10px;
-                display: inline-block;
-                vertical-align: text-top;
-                background: white;
-                border: 1px solid #bbb;
-                border-radius: 2px;
-                box-sizing: border-box;
-                z-index: 2;
-            }
-
-            .custom-checkbox input[type="checkbox"]:checked + label:after {
-                content: '';
-                position: absolute;
-                left: 6px;
-                top: 3px;
-                width: 6px;
-                height: 11px;
-                border: solid #000;
-                border-width: 0 3px 3px 0;
-                transform: inherit;
-                z-index: 3;
-                transform: rotateZ(45deg);
-            }
-
-            .custom-checkbox input[type="checkbox"]:checked + label:before {
-                border-color: #03A9F4;
-                background: #03A9F4;
-            }
-
-            .custom-checkbox input[type="checkbox"]:checked + label:after {
-                border-color: #fff;
-            }
-
-            .custom-checkbox input[type="checkbox"]:disabled + label:before {
-                color: #b8b8b8;
-                cursor: auto;
-                box-shadow: none;
-                background: #ddd;
-            }
+       
         /* Modal styles */
         .modal .modal-dialog {
             max-width: 400px;
@@ -352,16 +234,18 @@
 
 </head>
 <body>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
     <div class="container">
         <div class="table-responsive">
             <div class="table-wrapper">
                 <div class="table-title">
                     <div class="row">
                         <div class="col-xs-6">
-                            <h2>Quản lý <b>đội bóng</b></h2>
+                            <h2>Quản Lý <b>Đội Bóng</b></h2>
                         </div>
                         <div class="col-xs-6">
-                            <a href="CreateDoiBong"  class="btn btn-success" data-toggle="model"><i class="material-icons"></i> <span>Thêm mới</span></a>
+                            <a href="CreateDoiBong" class="btn btn-success" data-toggle="model"><i class="fa fa-plus"></i> <span>Thêm mới đội bóng</span></a>
                         </div>
                     </div>
                 </div>
@@ -369,7 +253,7 @@
                     <thead>
                         <tr>
 
-                            <th>ID</th>
+                            <th class="align-self-center">ID</th>
                             <th>Tên CLB</th>
                             <th>Quốc Gia</th>
                             <th>Năm thành lập</th>
@@ -380,29 +264,42 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.IdClb)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.TenClb)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.QuocGia)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.NamThanhLap)
+                            <tr>
+                                <td class="align-self-center font-weight-bold">
+                                    @Html.DisplayFor(modelItem => item.IdClb)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TenClb)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.QuocGia)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NamThanhLap)
 
-                            </td>
-                            <td>
-                                <img src="@Html.DisplayFor(modelItem => item.LoGo)" width="100px" height="100px" />
-                            </td>
-                            <td>
-                                @Html.ActionLink("Edit", "Edit", new { id=item.IdClb  }) |
-                                @Html.ActionLink("Details", "Details", new {  id=item.IdClb  }) |
-                                @Html.ActionLink("Delete", "Delete", new {  id=item.IdClb  })
-                            </td>
-                        </tr>
+                                </td>
+                                <td>
+                                    <img src="@Html.DisplayFor(modelItem => item.LoGo)" width="100px" height="100px"  style="background-position: center center;background-repeat: no-repeat;
+                                    display: block;margin-left: auto;margin-right: auto;"/>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Edit", "DoiBong", new { id = item.IdClb})">
+                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                        <span>Sửa</span>
+                                    </a>
+
+                                    <a href="@Url.Action("Details", "DoiBong" ,new { id = item.IdClb})">
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        <span>Chi tiết</span>
+                                    </a>
+
+                                    <a href="@Url.Action("Delete", "DoiBong", new { id = item.IdClb})">
+                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                        <span>Xoá</span>
+                                    </a>
+                                   
+                                </td>
+                            </tr>
                         }
                     </tbody>
                 </table>
