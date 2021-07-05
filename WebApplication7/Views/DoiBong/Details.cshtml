@@ -11,8 +11,15 @@
         .wrapp {
             width: 90%;
             height: 600px;
-            margin-top: 10px;
+            margin-top: 50px;
             box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 10px;
+
+            background-position: center center;
+            background-repeat: no-repeat;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            
         }
 
         .photo {
@@ -79,47 +86,55 @@
             <div class="wrapp-table">
                 <table>
                     <tr>
-                        <th>
+                        <td>
                             ID
-                        </th>
-                        <td>
-                            @Html.DisplayFor(model => model.IdClb)
+                        </td>
+                        <th>
+                            <b style="font-size:18px">
+                                @Html.DisplayFor(model => model.IdClb)
+                            </b>
 
-                        </td>
+                        </th>
                     </tr>
                     <tr>
-                        <th>
+                        <td>
                             Tên Câu Lạc Bộ
-                        </th>
-                        <td>
-                            @Html.DisplayFor(model => model.TenClb)
                         </td>
+                        <th>
+                            <b style="font-size:18px">
+                                @Html.DisplayFor(model => model.TenClb)
+                            </b>
+                        </th>
                     </tr>
                     <tr>
-                        <th>
+                        <td>
                             Quốc Gia
-                        </th>
-                        <td>
-                            @Html.DisplayFor(model => model.QuocGia)
                         </td>
+                        <th>
+                            <b style="font-size:18px">
+                                @Html.DisplayFor(model => model.QuocGia)
+                            </b>
+                        </th>
                     </tr>
                     <tr>
-                        <th>
-                            Năm thành lập
-                        </th>
                         <td>
-                            @Html.DisplayFor(model => model.NamThanhLap)
+                            Năm thành lập
                         </td>
+                        <th>
+                            <b style="font-size:18px">
+                                @Html.DisplayFor(model => model.NamThanhLap)
+                            </b>
+                        </th>
                     </tr>
 
                 </table>
                 <table>
                     <tr>
                         <td style="text-align: left;">
-                            <p class="btn btn-success">@Html.ActionLink("Huấn Luyện Viên", "QuanLyHLV", new { id = Model.IdClb })</p>
+                            <p style="background-color:aliceblue; color:black; border-color:black;border-width:0px;" class="btn btn-success">@Html.ActionLink("Huấn Luyện Viên", "QuanLyHLV", new { id = Model.IdClb })</p>
                         </td>
                         <td style="text-align: left;">
-                            <p  class="btn btn-success">@Html.ActionLink("Cầu Thủ", "CauThuCLB", new { id = Model.IdClb })</p>
+                            <p style="background-color:aliceblue; color:aliceblue;border-width:0px;" class="btn btn-success">@Html.ActionLink("Cầu Thủ", "CauThuCLB", new { id = Model.IdClb })</p>
                             
                         </td>
                     </tr>
@@ -131,6 +146,7 @@
     </div>
     
 </div>
-<p class="btn btn-default" style="margin-top: 10px; text-align: right; margin-right: 200px">
+
+<p class="btn btn-default" style="margin-top: -95px; text-align: left; margin-left:70px">
     @Html.ActionLink("Trở lại", "ListDoiBong")
 </p>
