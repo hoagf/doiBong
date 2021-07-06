@@ -11,6 +11,7 @@ namespace WebApplication7.Controllers
 {
     public class CauThuController : Controller
     {
+        string idClbb;
         // GET: CauThu
         DALCauThu ct = new DALCauThu();
         //public ActionResult Index()
@@ -45,12 +46,14 @@ namespace WebApplication7.Controllers
         [HttpPost]
         public ActionResult Create(CauThu cauthu)
         {
+            idClbb = cauthu.IdClb;
             ct.addCauThu(cauthu);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { @errorId = idClbb });
         }
 
         public ActionResult Edit(string id)
         {
+            
             return View(ct.getMotCauThu(id) );
             
         }
@@ -58,9 +61,11 @@ namespace WebApplication7.Controllers
         [HttpPost]
         public ActionResult Edit(CauThu ct1)
         {
+            idClbb = ct1.IdClb;
+            //ct1.IdCauThu = Int32.Parse(idd);
             ct.editCauThu(ct1);
             
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { @errorId = idClbb });
         }
 
 
@@ -70,7 +75,7 @@ namespace WebApplication7.Controllers
         public ActionResult Delete(String id)
         {
             ct.deleteCauThu(id);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { @errorId = idClbb });
         }
 
 

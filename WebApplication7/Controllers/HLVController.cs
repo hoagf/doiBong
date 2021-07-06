@@ -12,6 +12,7 @@ namespace WebApplication7.Controllers
     {
         // GET: HLV
         private DALBanHuanLuyen dAL = new DALBanHuanLuyen();
+        string idClbb;
 
         public ActionResult Index(string errorId) //
         {
@@ -34,8 +35,9 @@ namespace WebApplication7.Controllers
         [HttpPost]
         public ActionResult Create(BanHuanLuyen hlv)
         {
+            idClbb = hlv.IdClb;
             dAL.addBHL(hlv);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { @errorId = idClbb });
         }
         public ActionResult Details(string id)
         {
@@ -50,12 +52,13 @@ namespace WebApplication7.Controllers
         public ActionResult Edit(BanHuanLuyen bhl)
         {
             dAL.editBHL(bhl);
-            return RedirectToAction("Index");
+            idClbb = bhl.IdClb;
+            return RedirectToAction("Index", new { @errorId = idClbb });
         }
         public ActionResult Delete(string id)
         {
             dAL.deleteBHL(id);
-           return RedirectToAction("Index");
+           return RedirectToAction("Index", new { @errorId = idClbb});
         }
         
         public ActionResult getHLVCLB(string id)
