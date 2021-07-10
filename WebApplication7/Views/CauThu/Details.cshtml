@@ -4,176 +4,77 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Đội bóng</title>
-    <style>
-        .wrapp {
-            width: 90%;
-            height: 600px;
-            margin-top: 50px;
-            box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 10px;
-            background-position: center center;
-            background-repeat: no-repeat;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
+<!-- Section Area - Content Central -->
+<section class="content-info">
 
-        .photo {
-            width: 50%;
-            height: 400px;
-            float: left;
-            margin-top: 40px;
-        }
-
-        .wrapp-table {
-            width: 50%;
-            height: 500px;
-            float: left;
-            margin-top: 100px;
-            padding-left: 10%;
-        }
-
-        table {
-            width: 90%;
-            height: 350px;
-            margin-left: 10%;
-        }
-        /** css title*/
-        .wrapp-title {
-            width: 100%;
-            height: auto;
-            background-color: aquamarine;
-        }
-
-        .title1 {
-            width: 40%;
-            height: 2px;
-            border: solid 1px black;
-            float: left;
-        }
-
-        .title2 {
-            width: 20%;
-            float: left;
-        }
-
-        .title3 {
-            width: 40%;
-            height: 3px;
-            border: solid 1px black;
-            float: left;
-        }
-    </style>
-</head>
-<div>
-    <div>
-        <div class="wrapp">
-            <div style="height:25px"></div>
-            <div>
-                <h2 style="text-align:center;font-style:normal;">
-                    <b>Thông Tin Chi Tiết</b>
-                </h2>
+    <!-- Single Team Tabs -->
+    <div class="single-player-tabs">
+        <div class="container">
+            <div class="breadcrumbs padding-top-mini">
+                <ul>
+                    <li><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
+                    <li><a href="@Url.Action("Index","CauThu")">Cầu thủ</a></li>
+                    <li>Details cầu thủ @ViewBag.CT.TenCauThu</li>
+                </ul>
             </div>
-            <div class="photo">
-                <img src="@Html.DisplayFor(model => model.HinhAnh)" width="400px" height="400px"
-                     style="background-position: center center;background-repeat: no-repeat;display: block;
-                    margin-left: auto;margin-right: auto;object-fit: contain;" />
-                <h3 style="text-align:center; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; margin-top:30px">Hình ảnh</h3>
-            </div>
-            <div class="wrapp-table">
-                <table>
-                    <tr>
-                        <td>
-                            Tên Cầu Thủ
-                        </td>
-                        <th>
-                            <b style="font-size:18px">
-                                @Html.DisplayFor(model => model.TenCauThu)
-                            </b>
+            <div class="row">
+                <!-- Side info single team-->
+                <div class="col-6 mx-auto">
 
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>
-                            Quốc Tịch
-                        </td>
-                        <th>
-                            <b style="font-size:18px">
-                                @Html.DisplayFor(model => model.QuocTich)
-                            </b>
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>
-                            Vị Trí
-                        </td>
-                        <th>
-                            <b style="font-size:18px">
-                                @Html.DisplayFor(model => model.ViTri)
-                            </b>
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>
-                            Giới Tính
-                        </td>
-                        <th>
-                            <b style="font-size:18px">
-                                @Html.DisplayFor(model => model.GioiTinh)
-                            </b>
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>
-                            Năm Sinh
-                        </td>
-                        <th>
-                            <b style="font-size:18px">
-                                @Html.DisplayFor(model => model.NamSinh)
-                            </b>
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>
-                            Chiều Cao
-                        </td>
-                        <th>
-                            <b style="font-size:18px">
-                                @Html.DisplayFor(model => model.ChieuCao)
-                            </b>
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>
-                            Cân Nặng
-                        </td>
-                        <th>
-                            <b style="font-size:18px">
-                                @Html.DisplayFor(model => model.CanNang)
-                            </b>
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>
-                            Lương
-                        </td>
-                        <th>
-                            <b style="font-size:18px">
-                                @Html.DisplayFor(model => model.Luong)
-                            </b>
-                        </th>
-                    </tr>
+                    <div class="item-player single-player">
+                        <div class="head-player" style="max-height: 300px;">
+                            <img src="@ViewBag.CT.HinhAnh" alt="location-team">
+                        </div>
+                        <div class="info-player">
+                            <h4>
+                                @ViewBag.CT.TenCauThu
+                            </h4>
+                            <ul>
+                                <li>
+                                    <strong>Câu lạc bộ:</strong> <span><img src="@ViewBag.CLB.LoGo" alt=""> @ViewBag.CLB.TenClb </span>
+                                </li>
+                                <li><strong>Quốc tịch:</strong> <span>@ViewBag.CT.QuocTich</span></li>
+                                <li><strong>Năm sinh:</strong> <span>@ViewBag.CT.NamSinh</span></li>
+                                <li><strong>Giới tính:</strong> <span>@ViewBag.CT.GioiTinh</span></li>
+                                <li><strong>Vị trí:</strong> <span>@ViewBag.CT.ViTri</span></li>
+                                <li><strong>Chiều cao:</strong> <span>@ViewBag.CT.ChieuCao cm</span></li>
+                                <li><strong>Cân nặng:</strong> <span>@ViewBag.CT.CanNang kg</span></li>
+                            </ul>
 
-                </table>
+                            <h6>Theo dõi @ViewBag.CT.TenCauThu</h6>
+
+                            <ul class="social-player">
+                                <li>
+                                    <div>
+                                        <a href="#" class="facebook">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <a href="#" class="twitter-icon">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <a href="#" class="youtube">
+                                            <i class="fa fa-youtube"></i>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- end Side info single team-->
+
 
             </div>
         </div>
     </div>
-    
-</div>
-
-<p class="btn btn-default" style="margin-top: -95px; text-align: left; margin-left:70px">
-    @Html.ActionLink("Trở lại", "Index", new { errorId = Model.IdClb })
-</p>
+    <!-- Single Team Tabs -->
+</section>
+<!-- End Section Area -  Content Central -->

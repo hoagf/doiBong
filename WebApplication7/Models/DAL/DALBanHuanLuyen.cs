@@ -95,8 +95,7 @@ namespace WebApplication7.DAL
             else
             {
                 return null;
-            }
-            conn.Close();
+            }          
         }
         public void addBHL(BanHuanLuyen bhl)
         {

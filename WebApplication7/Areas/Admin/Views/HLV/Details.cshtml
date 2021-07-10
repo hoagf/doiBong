@@ -1,0 +1,152 @@
+﻿@model WebApplication7.Models.BanHuanLuyen
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Đội bóng</title>
+    <style>
+        .wrapp {
+            width: 90%;
+            height: 600px;
+            margin-top: 50px;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 10px;
+            background-position: center center;
+            background-repeat: no-repeat;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .photo {
+            width: 50%;
+            height: 400px;
+            float: left;
+            margin-top: 40px;
+        }
+
+        .wrapp-table {
+            width: 50%;
+            height: 500px;
+            float: left;
+            margin-top: 100px;
+            padding-left: 10%;
+        }
+
+        table {
+            width: 90%;
+            height: 300px;
+            margin-left: 5%;
+        }
+        /** css title*/
+        .wrapp-title {
+            width: 100%;
+            height: auto;
+            background-color: aquamarine;
+        }
+
+        .title1 {
+            width: 40%;
+            height: 2px;
+            border: solid 1px black;
+            float: left;
+        }
+
+        .title2 {
+            width: 20%;
+            float: left;
+        }
+
+        .title3 {
+            width: 40%;
+            height: 3px;
+            border: solid 1px black;
+            float: left;
+        }
+    </style>
+</head>
+
+<div>
+    <div>
+
+        <div class="wrapp">
+            <div style="height:25px"></div>
+            <div>
+                <h2 style="text-align:center;font-style:normal;">
+                    <b>Thông Tin Chi Tiết</b>
+                </h2>
+            </div>
+            <div class="photo">
+                <img src="@Html.DisplayFor(model => model.HinhAnh)" width="400px" height="400px"
+                     style="background-position: center center;background-repeat: no-repeat;display: block;
+                    margin-left: auto;margin-right: auto;object-fit: contain;" />
+                <h3 style="text-align:center; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; margin-top:30px">Hình ảnh</h3>
+            </div>
+            <div class="wrapp-table">
+                <table>
+                    <tr>
+                        <td>
+                            Tên
+                        </td>
+                        <th>
+                            <b style="font-size:18px">
+                                @Html.DisplayFor(model => model.TenHlv)
+                            </b>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            Quốc Tịch
+                        </td>
+                        <th>
+                            <b style="font-size:18px">
+                                @Html.DisplayFor(model => model.QuocTich)
+                            </b>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            Năm Sinh
+                        </td>
+                        <th>
+                            <b style="font-size:18px">
+                                @Html.DisplayFor(model => model.NamSinh)
+                            </b>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            Giới Tính
+                        </td>
+                        <th>
+                            <b style="font-size:18px">
+                                @Html.DisplayFor(model => model.GioiTinh)
+                            </b>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            Chức Vụ
+                        </td>
+                        <th>
+                            <b style="font-size:18px">
+                                @Html.DisplayFor(model => model.ChucVu)
+                            </b>
+                        </th>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div>
+    <p class="btn btn-default" style="margin-top: -95px; text-align: left; margin-left:70px">
+        @Html.ActionLink("Trở lại", "Index", new { errorId = Model.IdClb })
+    </p>
+</div>
