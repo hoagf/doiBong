@@ -12,6 +12,8 @@ namespace WebApplication7.Controllers
     {
         // GET: DoiBong
         DADoiBong db = new DADoiBong();
+        DALBanHuanLuyen bhl = new DALBanHuanLuyen();
+        DALCauThu ct = new DALCauThu();
         public ActionResult ListDoiBong()
         {
             List<DoiBong> list = db.getAllDoiBong();
@@ -35,8 +37,11 @@ namespace WebApplication7.Controllers
         //xem chi tiet doi bong
         public ActionResult Details(string id)
         {
+            List<BanHuanLuyen> bhlList = bhl.getBHLCuaCLB(id);
+            List<CauThu> ctList = ct.getCauThuClb(id);
+            ViewBag.HLV = bhlList;
+            ViewBag.CT = ctList;
             return View(db.getMotDoiBong(id));
-
         }
         //sua thong tin  doi bong
         public ActionResult Edit(string id)
@@ -62,7 +67,7 @@ namespace WebApplication7.Controllers
         }
         public ActionResult QuanLyHLV(string id)
         {
-
+            ViewBag.HLV = new List<BanHuanLuyen>();
             return RedirectToAction("Index", "HLV", new { @errorId = id });
         }
         public ActionResult CauThuCLB(string id)

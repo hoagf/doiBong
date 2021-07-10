@@ -16,8 +16,10 @@ namespace WebApplication7
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "DoiBong", action = "ListDoiBong", id = UrlParameter.Optional }
+                defaults: new { controller = "DoiBong", action = "ListDoiBong", id = UrlParameter.Optional },
+                namespaces: new[] {"WebApplication7.Controllers"}
             );
+            
         }
     }
 }

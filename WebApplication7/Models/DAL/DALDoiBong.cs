@@ -89,7 +89,6 @@ namespace WebApplication7.DAL
             {
                 return null;
             }
-            conn.Close();
         }
         public void addDoiBong(DoiBong db)
         {
