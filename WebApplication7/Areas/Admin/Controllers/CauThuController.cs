@@ -76,6 +76,8 @@ namespace WebApplication7.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult Edit(CauThu ct1)
         {
+            Request.ContentEncoding = System.Text.Encoding.UTF8;
+
             idClbb = ct1.IdClb;
             //ct1.IdCauThu = Int32.Parse(idd);
             ct.editCauThu(ct1);
