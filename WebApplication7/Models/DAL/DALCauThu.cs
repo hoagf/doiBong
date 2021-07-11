@@ -108,7 +108,7 @@ namespace WebApplication7.DAL
         public void addCauThu(CauThu ct)
         {
            //Id tu dong tang
-            string sql = "INSERT INTO cauThu(tenCauthu, quocTich, viTri, gioiTinh, luong, namSinh, chieuCao, canNang, idClb, hinhAnh) VALUES ('"+ct.TenCauThu+"', '"+ct.QuocTich+"', '"+ct.ViTri+"', '"+ct.GioiTinh+"', "+ct.Luong+", '"+ct.NamSinh+"', "+ct.ChieuCao+", "+ct.CanNang+", '"+ct.IdClb+"', '"+ct.HinhAnh+"') ";
+            string sql = "INSERT INTO cauThu(tenCauthu, quocTich, viTri, gioiTinh, luong, namSinh, chieuCao, canNang, idClb, hinhAnh) VALUES (N'"+ct.TenCauThu+"', N'"+ct.QuocTich+"', N'"+ct.ViTri+"', N'"+ct.GioiTinh+"', "+ct.Luong+", '"+ct.NamSinh+"', "+ct.ChieuCao+", "+ct.CanNang+", '"+ct.IdClb+"', '"+ct.HinhAnh+"') ";
             SqlConnection conn = KetNoi.connect();
             conn.Open();
             SqlCommand cmd = new SqlCommand();
@@ -120,7 +120,7 @@ namespace WebApplication7.DAL
         }
         public void editCauThu(CauThu ct)
         {
-            string sql = "UPDATE CauThu SET tenCauthu = '"+ct.TenCauThu+"', quocTich = '"+ct.QuocTich+"', viTri = '"+ct.ViTri+"', gioiTinh ='"+ct.GioiTinh+"',luong = "+ct.Luong+", namSinh="+ct.NamSinh+", chieuCao="+ct.ChieuCao+", canNang ="+ct.CanNang+", idClb = '"+ct.IdClb+"', hinhAnh = '"+ct.HinhAnh+"' WHERE idCauThu ="+ct.IdCauThu;
+            string sql = "UPDATE CauThu SET tenCauthu = N'"+ct.TenCauThu+"', quocTich = N'"+ct.QuocTich+"', viTri = N'"+ct.ViTri+"', gioiTinh = N'"+ct.GioiTinh+"',luong = "+ct.Luong+", namSinh="+ct.NamSinh+", chieuCao="+ct.ChieuCao+", canNang ="+ct.CanNang+", idClb = '"+ct.IdClb+"', hinhAnh = '"+ct.HinhAnh+"' WHERE idCauThu ="+ct.IdCauThu;
             SqlConnection conn = KetNoi.connect();
             conn.Open();
             SqlCommand cmd = new SqlCommand();

@@ -94,7 +94,7 @@ namespace WebApplication7.DAL
         {
            // Id tu dong tang
             string sql = "INSERT INTO DoiBong(idClb, tenClb, quocGia, loGo, namThanhLap) " +
-                "VALUES ('" + db.IdClb + "', '" + db.TenClb + "', '"+db.QuocGia+ "','"+db.LoGo+ "','"+db.NamThanhLap+ "')" ;
+                "VALUES ('" + db.IdClb + "', N'" + db.TenClb + "', N'"+db.QuocGia+ "','"+db.LoGo+ "','"+db.NamThanhLap+ "')" ;
             SqlConnection conn = KetNoi.connect();
             conn.Open();
             SqlCommand cmd = new SqlCommand();
@@ -106,8 +106,8 @@ namespace WebApplication7.DAL
         }
         public void editDoiBong(DoiBong db)
         {
-            string sql = "UPDATE DoiBong SET tenClb = '"+db.TenClb+
-                "', quocGia = '"+db.QuocGia+"', loGo ='"+db.LoGo+"',namThanhLap = "+
+            string sql = "UPDATE DoiBong SET tenClb = N'"+db.TenClb+
+                "', quocGia = N'"+db.QuocGia+"', loGo ='"+db.LoGo+"',namThanhLap = "+
                 db.NamThanhLap+"WHERE DoiBong.idClb ='"+db.IdClb+"'";
 
             SqlConnection conn = KetNoi.connect();
