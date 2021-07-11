@@ -4,150 +4,162 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Đội bóng</title>
-    <style>
-        .wrapp {
-            width: 90%;
-            height: 600px;
-            margin-top: 50px;
-            box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 10px;
+<!-- Section Title -->
+<div class="section-title-team">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-7">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="@Html.DisplayFor(model => model.LoGo)" alt="">
+                    </div>
 
-            background-position: center center;
-            background-repeat: no-repeat;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            
-        }
+                    <div class="col-md-9">
+                        <h1>@Html.DisplayFor(model => model.TenClb)</h1>
+                        <ul class="general-info">
+                            <li><h6><strong>Năm thành lập: </strong> @Html.DisplayFor(model => model.NamThanhLap)</h6></li>
+                            <li><h6><strong>Quốc gia: </strong>@Html.DisplayFor(model => model.QuocGia)</h6></li>
+                            <li>
+                                <h6>
+                                    <i class="fa fa-link" aria-hidden="true"></i>
+                                    <a href="#" target="_blank">www.CLB.com</a>
+                                </h6>
+                            </li>
+                        </ul>
 
-        .photo {
-            width: 50%;
-            height: 400px;
-            float: left;
-            margin-top: 40px;
-        }
-
-        .wrapp-table {
-            width: 50%;
-            height: 500px;
-            float: left;
-            margin-top: 100px;
-            padding-left:10%;
-        }
-
-        table {
-            width: 90%;
-            height: 200px;
-            margin-left: 10%;
-        }
-        /** css title*/
-        .wrapp-title{
-            width:100%;
-            height:auto;
-            background-color:aquamarine;
-        }
-        .title1 {
-            width: 40%;
-            height: 2px;
-            border: solid 1px black;
-            float: left;
-        }
-        .title2 {
-            width: 20%;
-            float: left;
-        }
-        .title3 {
-            width: 40%;
-            height: 3px;
-            border: solid 1px black;
-            float: left;
-        }
-    </style>
-</head>
-
-<div>
-    <div>
-
-        <div class="wrapp">
-            <div style="height:25px"></div>
-            <div>
-                <h2 style="text-align:center;font-style:normal;">
-                    <b>Thông Tin Chi Tiết</b>
-                </h2>
+                        <ul class="social-teams">
+                            <li>
+                                <div>
+                                    <a href="#" class="facebook">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a href="#" class="twitter-icon">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a href="#" class="youtube">
+                                        <i class="fa fa-youtube"></i>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="photo">
-                <img src="@Html.DisplayFor(model => model.LoGo)" width="400px" height="400px"
-                     style="background-position: center center;background-repeat: no-repeat;display: block;
-                    margin-left: auto;margin-right: auto;object-fit: contain;" />
-                <h3 style="text-align:center; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; margin-top:30px">Hình ảnh</h3>
-            </div>
-            <div class="wrapp-table">
-                <table>
-                    <tr>
-                        <td>
-                            ID
-                        </td>
-                        <th>
-                            <b style="font-size:18px">
-                                @Html.DisplayFor(model => model.IdClb)
-                            </b>
+        </div>
+    </div>
+    <div class="bg-image-team" style="background:url(@Html.DisplayFor(model => model.LoGo));"></div>
+</div>
+<!-- End Section Title -->
+<!-- Section Area - Content Central -->
+<section class="content-info">
 
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>
-                            Tên Câu Lạc Bộ
-                        </td>
-                        <th>
-                            <b style="font-size:18px">
-                                @Html.DisplayFor(model => model.TenClb)
-                            </b>
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>
-                            Quốc Gia
-                        </td>
-                        <th>
-                            <b style="font-size:18px">
-                                @Html.DisplayFor(model => model.QuocGia)
-                            </b>
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>
-                            Năm thành lập
-                        </td>
-                        <th>
-                            <b style="font-size:18px">
-                                @Html.DisplayFor(model => model.NamThanhLap)
-                            </b>
-                        </th>
-                    </tr>
+    <!-- Single Team Tabs -->
+    <div class="single-team-tabs">
+        <div class="container">
+            <div class="row">
+                <!-- Left Content - Tabs and Carousel -->
+                <div class="col-xl-12 col-md-12">
+                    <!-- Nav Tabs -->
+                    <ul class="nav nav-tabs" id="myTab">
+                        <li class="active"><a href="#hlvv" data-toggle="tab">Huấn luyện viên</a></li>
+                        <li><a href="#squad" data-toggle="tab">Cầu thủ</a></li>
+                    </ul>
+                    <!-- End Nav Tabs -->
+                </div>
 
-                </table>
-                <table>
-                    <tr>
-                        <td style="text-align: left;width:35%">
-                            <p style="background-color:white; color:black; border-color:black;border-width:0px;" class="btn btn-success">@Html.ActionLink("Huấn Luyện Viên", "QuanLyHLV", new { id = Model.IdClb })</p>
-                        </td>
-                        <td style="text-align: left;">
-                            <p style="background-color:white; color:aliceblue;border-width:0px;" class="btn btn-success">@Html.ActionLink("Cầu Thủ", "CauThuCLB", new { id = Model.IdClb })</p>
-                            
-                        </td>
-                        
-                    </tr>
-                </table>
+                <div class="col-lg-12 padding-top-mini">
+                    <div class="breadcrumbs">
+                        <ul>
+                            <li><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
+                            <li><a href="@Url.Action("ListDoiBong","DoiBong")">Đội bóng</a></li>
+                            <li>Details @Html.DisplayFor(model => model.TenClb)</li>
+                        </ul>
+                    </div>
+                    <!-- Content Tabs -->
+                    <div class="tab-content">
+                        <!-- Tab Two - squad -->
+                        <div class="tab-pane" id="squad">
+                            <div class="row">
+                                <!-- Item Player -->
+                                @foreach (var item in ViewBag.CT as IEnumerable<WebApplication7.Models.CauThu>)
+                                {
+                                    <div class="col-xl-4 col-lg-6 col-md-6">
+                                        <div class="item-player">
+                                            <div class="head-player">
+                                                <img src="@item.HinhAnh" alt="location-team">
+                                                <div class="overlay"><a href="single-player.html">+</a></div>
+                                            </div>
+                                            <div class="info-player">
+                                                <span class="number-player">
+                                                    13
+                                                </span>
+                                                <h4>
+                                                    @item.TenCauThu
+                                                    <span>@item.ViTri</span>
+                                                </h4>
+                                                <ul>
+                                                    <li>
+                                                        <strong>Chiều cao</strong> <span>@item.ChieuCao </span>
+                                                    </li>
+                                                    <li><strong>Năm sinh:</strong> <span>@item.NamSinh</span></li>
+                                                    <li><strong>Quốc tịch:</strong> <span>@item.QuocTich</span></li>
+                                                </ul>
+                                            </div>
+                                            <a href="@Url.Action("Details","CauThu", new {id = item.IdCauThu})" class="btn">Chi tiết cầu thủ <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                }
+                                <!-- End Item Player -->
+                            </div>
+                        </div>
+                        <!-- End Tab Two - squad -->
+                        <!-- Tab Theree - fixtures -->
+                        <!-- Item Coach -->
+                        <div class="tab-pane active" id="hlvv">
+                            <div class="row">
+                                @foreach (var item in ViewBag.HLV as IEnumerable<WebApplication7.Models.BanHuanLuyen>)
+                                {
+                                    <div class="col-xl-4 col-lg-6 col-md-6">
+                                        <div class="item-player">
+                                            <div class="head-player">
+                                                <img src="@item.HinhAnh" alt="location-team">
+                                                <div class="overlay"><a href="single-player.html">+</a></div>
+                                            </div>
+                                            <div class="info-player">
+                                                <h4>
+                                                    @item.TenHlv
+                                                    <span></span>
+                                                </h4>
+                                                <ul>
+                                                    <li>
+                                                        <strong>Chức vụ</strong> <span> @item.ChucVu </span>
+                                                    </li>
+                                                    <li><strong>Năm sinh:</strong> <span>@item.NamSinh</span></li>
+                                                    <li><strong>Quốc tịch:</strong> <span>@item.QuocTich</span></li>
+                                                </ul>
+                                            </div>
+                                            <a href="@Url.Action("Details","HLV", new {id = item.IdHlv})" class="btn">Chi tiết huấn luyện viên <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                        <!-- End Item Coach -->
+                    </div>
+                    <!-- Content Tabs -->
+                </div>
 
             </div>
         </div>
-        
     </div>
-    
-</div>
-
-<p class="btn btn-success" style="margin-top: -95px; text-align: left; margin-left:70px;background-color:white;border-width:0px;">
-    @Html.ActionLink("Trở lại", "ListDoiBong")
-</p>
+    <!-- Single Team Tabs -->
+</section>
+<!-- End Section Area -  Content Central -->

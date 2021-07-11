@@ -1,31 +1,152 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<!-- section-hero-->
+<div class="hero-header hero-bg" style="        background: url(https://wallpaperaccess.com/full/1348783.jpg);
+        height: 800px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 no-margin align-self-center">
+                <h1>FOOTBALL CLUP</h1>
+            </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        </div>
     </div>
 </div>
+<!-- End section-hero-->
+<!-- Section Area - Content Central -->
+<section class="content-info">
+
+    <!-- Dark Home -->
+    <div class="dark-home paddings-50-50">
+        <div class="container">
+            <div class="row">
+                <!-- Club Ranking -->
+                <div class="col-lg-6">
+                    <div class="club-ranking">
+                        <h5><a href="group-list.html">Bảng xếp hạng đội bóng</a><a style="float:right; margin-right:10px">Điểm</a></h5>
+                       
+                        <div class="info-ranking">
+                            <ul>
+                                @{
+                                    int i = 1;
+                                    int diem = 48;
+                                    int rd =0;
+                                    Random rnd = new Random();
+
+                                }
+                                @foreach (var item in ViewBag.DB as IEnumerable<WebApplication7.Models.DoiBong>)
+                                {
+                                    
+
+                                    <li>
+                                        <span class="position">
+                                            @i
+                                        </span>
+                                        <a href="single-team.html">
+                                            <img src="@item.LoGo" alt="">
+                                            @item.TenClb
+                                        </a>
+                                        <span class="points">
+                                            @diem
+                                        </span>
+                                    </li>
+                                   
+                                    rd = rnd.Next(0,5);
+                                    diem = diem - rd;
+
+                                    i++;
+                                    if (i > 11)
+                                    {
+                                        break;
+                                    }
+
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Club Ranking -->
+                <!-- Top player -->
+                <div class="col-lg-6">
+                    <div class="player-ranking">
+                        <h5><a href="group-list.html">Bảng xếp hạng cầu thủ</a><a style="float:right; margin-right:10px">Bàn thắng</a></h5>
+                        <div class="info-player">
+                            <ul>
+                                @{
+                                    int j = 1;
+                                    int bt = 16;
+                                    int rdd = 0;
+                                    Random rndd = new Random();
+                                }
+                                @foreach (var item in ViewBag.CT as IEnumerable<WebApplication7.Models.CauThu>)
+                                {
+                                    <li>
+                                        <span class="position">
+                                            @j
+                                        </span>
+                                        <a href="single-team.html">
+                                            <img src="@item.HinhAnh" alt="">
+                                            @item.TenCauThu
+                                        </a>
+                                        <span class="points">
+                                            @bt
+                                        </span>
+                                    </li>
+                                    rdd = rnd.Next(0, 3);
+                                    bt = bt - rdd;
+                                    j++;
+                                    if (j > 11)
+                                    {
+                                        break;
+                                    }
+
+                                }                         
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Top player -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Central -->
+    <section class="content-info">
+
+        <!-- White Section -->
+        <div class="white-section paddings">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-6 col-xl-6">
+                        <a href="@Url.Action("ListDoiBong","DoiBong")">
+                            <div class="item-boxed-img" style="background: url(https://wallpaperaccess.com/full/1348783.jpg);">
+                                <i class="fa fa-soccer-ball-o"></i>
+                                <h4>Đội bóng </h4>
+                                <p>Danh sách các đội bóng</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-6 col-xl-6">
+                        <a href="@Url.Action("Index","CauThu")">
+                            <div class="item-boxed-img" style="background: url(https://www.wallpaperkiss.com/wimg/b/133-1331284_big.jpg);">
+                                <i class="fa fa-soccer-ball-o"></i>
+                                <h4>Cầu thủ</h4>
+                                <p>Danh sách các cầu thủ</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>   
+
+            </div>
+        </div>
+        <!-- End White Section -->
+    </section>
+    <!-- End Content Central -->
+</section>
+

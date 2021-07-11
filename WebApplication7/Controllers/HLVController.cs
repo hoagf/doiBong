@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Dynamic;
 using System.Web.Mvc;
 using WebApplication7.Models;
 using WebApplication7.DAL;
@@ -12,6 +13,7 @@ namespace WebApplication7.Controllers
     {
         // GET: HLV
         private DALBanHuanLuyen dAL = new DALBanHuanLuyen();
+        private DADoiBong db = new DADoiBong();
         string idClbb;
 
         public ActionResult Index(string errorId) //
@@ -41,7 +43,11 @@ namespace WebApplication7.Controllers
         }
         public ActionResult Details(string id)
         {
-            return View(dAL.getMotBHL(id));
+            BanHuanLuyen bhl = dAL.getMotBHL(id);
+            DoiBong doiBong = db.getMotDoiBong(bhl.IdClb);
+            ViewBag.HLV = bhl;
+            ViewBag.CLB = doiBong;
+            return View();
         }
         public ActionResult Edit(string id)
         {

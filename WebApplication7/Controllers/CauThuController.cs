@@ -14,6 +14,7 @@ namespace WebApplication7.Controllers
         string idClbb;
         // GET: CauThu
         DALCauThu ct = new DALCauThu();
+        DADoiBong db = new DADoiBong();
         //public ActionResult Index()
         public ActionResult Index(string errorId)
         {
@@ -34,7 +35,11 @@ namespace WebApplication7.Controllers
 
         public ActionResult Details(string id)
         {
-            return View(ct.getMotCauThu(id));
+            CauThu cauthu = ct.getMotCauThu(id);
+            DoiBong doiBong = db.getMotDoiBong(cauthu.IdClb);
+            ViewBag.CT = cauthu;
+            ViewBag.CLB = doiBong;
+            return View();
         }
 
         //Them cau thu
