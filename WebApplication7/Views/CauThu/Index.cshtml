@@ -27,7 +27,9 @@
             </ul>
         </div>
         <div class="row portfolioContainer">
-
+            @{
+                Random rd = new Random();
+            }
             @foreach (var item in Model)
             {
                 <!-- Item Team Group A-->
@@ -37,7 +39,15 @@
                             <img src="@Html.DisplayFor(modelItem => item.HinhAnh)" alt="location-team">
                             <div class="overlay"><a href="@Url.Action("Details", "CauThu" ,new { id = item.IdCauThu})">+</a></div>
                         </div>
-                        <div class="info-team">                           
+                        <div class="info-team">
+                            <span class="logo-team">
+                                <span class="number-player" style="font-size: 30px; color: #fff; ">
+                                    @{
+                                        int i = rd.Next(1, 99);
+                                    }
+                                    @i
+                                </span>
+                            </span>
                             <h4>@Html.DisplayFor(modelItem => item.TenCauThu)</h4>
                             <span class="location-team">
                                 <i class="fa fa-map-marker" aria-hidden="true"><span> Quốc tịch:</span></i>
