@@ -69,7 +69,7 @@ namespace WebApplication7.Areas.Admin.Controllers
             {
                 return Redirect("/Home/Index");
             }
-            return View(ct.getMotCauThu(id) );
+            return View(ct.getMotCauThu(id));
             
         }
 

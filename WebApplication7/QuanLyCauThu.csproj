@@ -600,7 +600,6 @@
     <Content Include="plugins\images\users\ritesh.jpg" />
     <Content Include="plugins\images\users\sonu.jpg" />
     <Content Include="plugins\images\users\varun.jpg" />
-    <Content Include="Views\DoiBong\single-team.html" />
     <Content Include="Views\page-register.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -614,16 +613,10 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\CauThu\Index.cshtml" />
-    <Content Include="Views\DoiBong\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\DoiBong\ListDoiBong.cshtml" />
-    <Content Include="Views\HLV\Create.cshtml" />
     <Content Include="Views\HLV\Details.cshtml" />
-    <Content Include="Views\HLV\Edit.cshtml" />
     <Content Include="Views\HLV\Index.cshtml" />
-    <Content Include="Views\DoiBong\CreateDoiBong.cshtml" />
     <Content Include="Views\CauThu\Details.cshtml" />
-    <Content Include="Views\CauThu\Create.cshtml" />
-    <Content Include="Views\CauThu\Edit.cshtml" />
     <Content Include="Views\DoiBong\Details.cshtml" />
     <Content Include="Views\Shared\aspLayout.cshtml" />
     <Content Include="bootstrap\dist\.DS_Store" />
