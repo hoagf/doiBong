@@ -1,4 +1,9 @@
 ﻿@model IEnumerable<WebApplication7.Models.CauThu>
+
+@{
+    ViewBag.Title = "Danh sách Cầu thủ";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -260,64 +265,65 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.IdCauThu)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.TenCauThu)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.QuocTich)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ViTri)
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.IdCauThu)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TenCauThu)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.QuocTich)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ViTri)
 
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.GioiTinh)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.GioiTinh)
 
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Luong)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Luong)
 
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.NamSinh)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NamSinh)
 
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ChieuCao)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ChieuCao)
 
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.CanNang)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CanNang)
 
-                            <td>
-                                @Html.DisplayFor(modelItem => item.IdClb)
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.IdClb)
 
-                            </td>
-                            <td>
-                                <img src="@Html.DisplayFor(modelItem => item.HinhAnh)" width="100px" height="100px" />
-                            </td>
-                            <td>
+                                </td>
+                                <td>
+                                    <img src="@Html.DisplayFor(modelItem => item.HinhAnh)" width="100px" height="100px" />
+                                </td>
+                                <td>
 
-                                <a href="@Url.Action("Edit", "CauThu", new { id = item.IdCauThu})">
-                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                                    <span>Sửa</span>
-                                </a>
-                                <br />
-                                <a href="@Url.Action("Details", "CauThu" , new { id = item.IdCauThu})">
-                                    <i class="fa fa-user" aria-hidden="true"></i>
-                                    <span>Chi tiết</span>
-                                </a>
-                                <br />
-                                <a href="@Url.Action("Delete", "CauThu" , new { id = item.IdCauThu})">
-                                    <i class="fa fa-trash" aria-hidden="true"></i>
-                                    <span>Xoá</span>
-                                </a>
-                            </td>
-                        </tr>
+                                    <a href="@Url.Action("Edit", "CauThu", new { id = item.IdCauThu})">
+                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                        <span>Sửa</span>
+                                    </a>
+                                    <br />
+                                    <a href="@Url.Action("Details", "CauThu" , new { id = item.IdCauThu})">
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        <span>Chi tiết</span>
+                                    </a>
+                                    <br />
+                                    
+                                    <a href="@Url.Action("Delete", "CauThu" , new { id = item.IdCauThu})" onclick="return confirm('Bạn có muốn xóa?');">
+                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                        <span>Xoá</span>
+                                    </a>
+                                </td>
+                            </tr>
                         }
                     </tbody>
                 </table>
@@ -325,8 +331,21 @@
             </div>
         </div>
     </div>
+    @{ int i = 0;
+        string idd = "";}
+    @foreach (var item in Model)
+    {
+        i++;
+        idd = item.IdClb;
+        if (i == 1)
+        {
+            break;
+        }
 
-
+    }
+    <p class="btn btn-success" style="margin-top: 5px; text-align: left; margin-left:50px;background-color:white;border-width:0px;">
+        @Html.ActionLink("Trở lại", "TroLai", new { id = idd })
+    </p>
 
 </body>
 </html>

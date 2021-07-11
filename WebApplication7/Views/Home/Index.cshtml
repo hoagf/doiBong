@@ -5,7 +5,7 @@
 }
 
 <!-- section-hero-->
-<div class="hero-header hero-bg" style="        background: url(https://wallpaperaccess.com/full/1348783.jpg);
+<div class="hero-header hero-bg" style="        background: url(https://live.staticflickr.com/65535/51303781761_6ec08c822d_k.jpg);
         height: 800px;">
     <div class="container">
         <div class="row">
@@ -28,25 +28,25 @@
                 <div class="col-lg-6">
                     <div class="club-ranking">
                         <h5><a href="group-list.html">Bảng xếp hạng đội bóng</a><a style="float:right; margin-right:10px">Điểm</a></h5>
-                       
+
                         <div class="info-ranking">
                             <ul>
                                 @{
                                     int i = 1;
                                     int diem = 48;
-                                    int rd =0;
+                                    int rd = 0;
                                     Random rnd = new Random();
 
                                 }
                                 @foreach (var item in ViewBag.DB as IEnumerable<WebApplication7.Models.DoiBong>)
                                 {
-                                    
+
 
                                     <li>
                                         <span class="position">
                                             @i
                                         </span>
-                                        <a href="single-team.html">
+                                        <a href="@Url.Action("Details", "DoiBong" ,new { id = item.IdClb})">
                                             <img src="@item.LoGo" alt="">
                                             @item.TenClb
                                         </a>
@@ -54,8 +54,8 @@
                                             @diem
                                         </span>
                                     </li>
-                                   
-                                    rd = rnd.Next(0,5);
+
+                                    rd = rnd.Next(0, 5);
                                     diem = diem - rd;
 
                                     i++;
@@ -88,7 +88,7 @@
                                         <span class="position">
                                             @j
                                         </span>
-                                        <a href="single-team.html">
+                                        <a href="@Url.Action("Details", "CauThu" ,new { id = item.IdCauThu})">
                                             <img src="@item.HinhAnh" alt="">
                                             @item.TenCauThu
                                         </a>
@@ -104,13 +104,15 @@
                                         break;
                                     }
 
-                                }                         
+                                }
                             </ul>
                         </div>
                     </div>
                 </div>
                 <!-- End Top player -->
-            </div>
+        
+        <!-- End Top player -->
+    </div>
         </div>
     </div>
 

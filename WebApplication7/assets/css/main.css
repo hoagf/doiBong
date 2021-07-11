@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /*!
  * Bootstrap v4.0.0-beta (https://getbootstrap.com)
  * Copyright 2011-2017 The Bootstrap Authors
@@ -15520,7 +15520,8 @@ header .mobile-nav:hover {
 
 /* line 461, ../sass/main.scss */
 .header-2 .sf-menu > li > a {
-  font-size: 14px;
+  font-size: 18px;
+  
 }
 
 /* line 464, ../sass/main.scss */
@@ -16527,7 +16528,7 @@ iframe.big-video {
 }
 /* line 1285, ../sass/main.scss */
 .panel-box.block-form {
-  max-width: 850px;
+  max-width: 650px;
   margin: 0 auto;
 }
 
@@ -16579,7 +16580,6 @@ iframe.big-video {
 /* line 1331, ../sass/main.scss */
 .titles {
   border-bottom: #ddd 1px solid;
-  margin-bottom: 35px;
   border-radius: 5px 5px 0 0;
 }
 

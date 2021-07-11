@@ -28,8 +28,8 @@
                         <!-- Logo-->
                         <div class="col col-xl-2">
                             <div class="logo">
-                                <a href="index-3.html" title="Return Home">
-                                    <img src="~/img/logo.png" alt="Logo" class="logo_img">
+                                <a href="@Url.Action("Index", "Home")" title="Return Home">
+                                    <img src="~/img/vnv.png" alt="Logo" class="logo_img">
                                 </a>
                             </div>
                         </div>
@@ -42,25 +42,38 @@
                                     <!-- Menu-->
                                     <ul class="sf-menu" id="menu">
                                         <li class="current">
-                                            <a href="@Url.Action("Index", "Home")">Trang chủ</a>
+                                            <a href="@Url.Action("Index", "Home")"><b>Trang chủ</b></a>
                                         </li>
 
 
                                         <li class="current">
-                                            <a href="@Url.Action("ListDoiBong", "DoiBong")">Đội bóng</a>    
+                                            <a href="@Url.Action("ListDoiBong", "DoiBong")"><b>Đội bóng</b></a>
                                         </li>
 
                                         <li class="current">
-                                            <a href="@Url.Action("Index","HLV")">Huấn luyện viên</a>  
+                                            <a href="@Url.Action("Index","HLV")"><b>Huấn luyện viên</b></a>
                                         </li>
 
                                         <li class="current">
-                                            <a href="@Url.Action("Index","CauThu")">Cầu thủ</a>                                          
-                                        </li>                                     
+                                            <a href="@Url.Action("Index","CauThu")"><b>Cầu thủ</b></a>
+                                        </li>
 
                                         <li>
-                                            <a href="#">Liên hệ</a>
+                                            <a href="@Url.Action("Index", "Contact")"><b>Liên hệ</b></a>
                                         </li>
+                                        @if (Session["USession"] == null)
+                                        {
+                                            <li>
+                                                <a href="@Url.Action("Index", "Login")"><b>Đăng nhập</b></a>
+                                            </li>
+                                        }
+                                        else
+                                        {
+                                            <li>
+                                                <a href="@Url.Action("Logout", "Login")"><b>Đăng xuất</b></a>
+                                            </li>
+                                        }
+
                                     </ul>
                                     <!-- End Menu-->
                                 </div>
@@ -143,7 +156,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <p>&copy; SportsClup</p>
+                        
                     </div>
                 </div>
             </div>

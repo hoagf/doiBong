@@ -20,20 +20,6 @@ namespace WebApplication7.Controllers
             return View(list);
 
         }
-        public ActionResult CreateDoiBong()
-        {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult CreateDoiBong(DoiBong doibong)
-        {
-            if (ModelState.IsValid)
-            {
-                db.addDoiBong(doibong);
-                return RedirectToAction("ListDoiBong");
-            }
-            return View();
-        }
         //xem chi tiet doi bong
         public ActionResult Details(string id)
         {
@@ -44,27 +30,6 @@ namespace WebApplication7.Controllers
             return View(db.getMotDoiBong(id));
         }
         //sua thong tin  doi bong
-        public ActionResult Edit(string id)
-        {
-            return View(db.getMotDoiBong(id));
-        }
-        [HttpPost]
-        public ActionResult Edit(DoiBong doibong)
-        {
-
-            if (ModelState.IsValid)
-            {
-                db.editDoiBong(doibong);
-                return RedirectToAction("ListDoiBong");
-            }
-            return View();
-
-        }
-        public ActionResult Delete(string id)
-        {
-            db.deleteDoiBong(id);
-            return RedirectToAction("ListDoiBong");
-        }
         public ActionResult QuanLyHLV(string id)
         {
             ViewBag.HLV = new List<BanHuanLuyen>();

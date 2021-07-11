@@ -129,6 +129,8 @@
     <Compile Include="Controllers\DoiBongController.cs" />
     <Compile Include="Controllers\HLVController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Models\UserSession.cs" />
     <Compile Include="Models\DAL\DALBanHuanLuyen.cs" />
     <Compile Include="Models\DAL\DALCauThu.cs" />
     <Compile Include="Models\DAL\DALDoiBong.cs" />
@@ -139,6 +141,7 @@
     <Compile Include="Models\BanHuanLuyen.cs" />
     <Compile Include="Models\CauThu.cs" />
     <Compile Include="Models\DoiBong.cs" />
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -304,6 +307,10 @@
     <Content Include="img\testimonials\2.jpg" />
     <Content Include="img\testimonials\3.jpg" />
     <Content Include="img\testimonials\4.jpg" />
+    <Content Include="img\vnv.png" />
+    <Content Include="plugins\images\bong.png" />
+    <Content Include="plugins\images\bong2.png" />
+    <Content Include="plugins\images\bong3.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
@@ -318,7 +325,6 @@
     <Content Include="Areas\Admin\Views\DoiBong\CreateDoiBong.cshtml" />
     <Content Include="Areas\Admin\Views\DoiBong\Details.cshtml" />
     <Content Include="Areas\Admin\Views\DoiBong\Edit.cshtml" />
-    <Content Include="Views\contact.html" />
     <Content Include="Views\DoiBong\ListDoiBong.cshtml" />
     <Content Include="Areas\Admin\Views\HLV\Create.cshtml" />
     <Content Include="Areas\Admin\Views\HLV\Details.cshtml" />
@@ -595,6 +601,7 @@
     <Content Include="plugins\images\users\sonu.jpg" />
     <Content Include="plugins\images\users\varun.jpg" />
     <Content Include="Views\DoiBong\single-team.html" />
+    <Content Include="Views\page-register.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -774,10 +781,12 @@
     <Content Include="plugins\images\.DS_Store" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Views\Admin\" />
     <Folder Include="Views\Contacts\" />
   </ItemGroup>
   <ItemGroup>

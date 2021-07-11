@@ -1,22 +1,22 @@
 ﻿@model WebApplication7.Models.CauThu
 
 @{
-    ViewBag.Title = "Create";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Thêm mới Cầu thủ";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Thêm cầu thủ</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        
+
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-       
+
 
         <div class="form-group">
             @Html.LabelFor(model => model.TenCauThu, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -36,14 +36,14 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ViTri, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.ViTri, new SelectList(new[] { "CB", "CF", "CM", "GK", "LB", "LM", "RB", "RM"}), new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.ViTri, new SelectList(new[] { "CB", "CF", "CM", "GK", "LB", "LM", "RB", "RM" }), new { @class = "form-control" })
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.GioiTinh, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.GioiTinh, new SelectList(new[] { "Nam", "Nu"}), new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.GioiTinh, new SelectList(new[] { "Nam", "Nu" }), new { @class = "form-control" })
 
             </div>
         </div>
@@ -104,7 +104,9 @@
 }
 
 <div>
-    @Html.ActionLink("Trở lại", "Index")
+    <p class="btn btn-default" style="margin-top: -95px; text-align: left; margin-left:70px">
+        @Html.ActionLink("Trở lại", "Index")
+    </p>
 </div>
 
 @section Scripts {

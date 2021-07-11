@@ -40,52 +40,6 @@ namespace WebApplication7.Controllers
             ViewBag.CT = cauthu;
             ViewBag.CLB = doiBong;
             return View();
-        }
-
-        //Them cau thu
-        public ActionResult Create()
-        {
-
-            return View();
-        }
-        [HttpPost]
-        public ActionResult Create(CauThu cauthu)
-        {
-            idClbb = cauthu.IdClb;
-            ct.addCauThu(cauthu);
-            return RedirectToAction("Index", new { @errorId = idClbb });
-        }
-
-        public ActionResult Edit(string id)
-        {
-            
-            return View(ct.getMotCauThu(id) );
-            
-        }
-
-        [HttpPost]
-        public ActionResult Edit(CauThu ct1)
-        {
-            idClbb = ct1.IdClb;
-            //ct1.IdCauThu = Int32.Parse(idd);
-            ct.editCauThu(ct1);
-            
-            return RedirectToAction("Index", new { @errorId = idClbb });
-        }
-
-
-        //xoa cau thu--------------------------------------
-
-        
-        public ActionResult Delete(String id)
-        {
-            ct.deleteCauThu(id);
-            return RedirectToAction("Index", new { @errorId = idClbb });
-        }
-
-
-     
-
-       
+        }       
     }
 }

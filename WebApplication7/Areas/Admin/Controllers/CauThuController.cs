@@ -17,7 +17,12 @@ namespace WebApplication7.Areas.Admin.Controllers
         //public ActionResult Index()
         public ActionResult Index(string errorId)
         {
-            if(errorId == null)
+            idClbb = errorId;
+            if (Session["AdSession"] == null)
+            {
+                return Redirect("/Home/Index");
+            }
+            else if (errorId == null)
             {
                 List<CauThu> list = ct.getAllCauThu();
                 return View(list);
@@ -34,13 +39,20 @@ namespace WebApplication7.Areas.Admin.Controllers
 
         public ActionResult Details(string id)
         {
+            if (Session["AdSession"] == null)
+            {
+                return Redirect("/Home/Index");
+            }
             return View(ct.getMotCauThu(id));
         }
 
         //Them cau thu
         public ActionResult Create()
         {
-
+            if (Session["AdSession"] == null)
+            {
+                return Redirect("/Home/Index");
+            }
             return View();
         }
         [HttpPost]
@@ -53,7 +65,10 @@ namespace WebApplication7.Areas.Admin.Controllers
 
         public ActionResult Edit(string id)
         {
-            
+            if (Session["AdSession"] == null)
+            {
+                return Redirect("/Home/Index");
+            }
             return View(ct.getMotCauThu(id) );
             
         }
@@ -74,13 +89,17 @@ namespace WebApplication7.Areas.Admin.Controllers
         
         public ActionResult Delete(String id)
         {
+            if (Session["AdSession"] == null)
+            {
+                return Redirect("/Home/Index");
+            }
+            CauThu gh = ct.getMotCauThu(id);
             ct.deleteCauThu(id);
-            return RedirectToAction("Index", new { @errorId = idClbb });
+            return RedirectToAction("Index", new { @errorId = gh.IdClb });
         }
-
-
-     
-
-       
+        public ActionResult TroLai(string id) //
+        {
+            return RedirectToAction("Details", "DoiBong", new { @id = id });
+        }
     }
 }
