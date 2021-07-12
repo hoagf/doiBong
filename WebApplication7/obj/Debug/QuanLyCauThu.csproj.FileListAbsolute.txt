@@ -709,6 +709,7 @@ C:\Users\TienHoang\Desktop\Công nghệ ASP.NET\doiBong\WebApplication7\obj\Debu
 C:\Users\TienHoang\Desktop\Công nghệ ASP.NET\doiBong\WebApplication7\obj\Debug\QuanLyCauThu.csproj.CopyComplete
 C:\Users\TienHoang\Desktop\Công nghệ ASP.NET\doiBong\WebApplication7\obj\Debug\WebApplication7.dll
 C:\Users\TienHoang\Desktop\Công nghệ ASP.NET\doiBong\WebApplication7\obj\Debug\WebApplication7.pdb
+<<<<<<< HEAD
 X:\2\doiBong\WebApplication7\bin\WebApplication7.dll.config
 X:\2\doiBong\WebApplication7\bin\WebApplication7.dll
 X:\2\doiBong\WebApplication7\bin\WebApplication7.pdb
@@ -788,3 +789,5 @@ X:\2\doiBong\WebApplication7\obj\Debug\QuanLyCauThu.csproj.CoreCompileInputs.cac
 X:\2\doiBong\WebApplication7\obj\Debug\QuanLyCauThu.csproj.CopyComplete
 X:\2\doiBong\WebApplication7\obj\Debug\WebApplication7.dll
 X:\2\doiBong\WebApplication7\obj\Debug\WebApplication7.pdb
+=======
+>>>>>>> e24050948ce17b4f9d183fb4a6ff6beac0fcd9a1
