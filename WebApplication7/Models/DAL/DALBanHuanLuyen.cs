@@ -101,8 +101,8 @@ namespace WebApplication7.DAL
         {
             //Id tu dong tang
             string sql = "INSERT INTO BanHuanLuyen(tenHlv, quocTich, namSinh, gioiTinh, chucVu, idClb, hinhAnh) " +
-                "VALUES ('" + bhl.TenHlv + "', '" + bhl.QuocTich + "', " +bhl.NamSinh+ ", '" + bhl.GioiTinh + 
-                "','"+bhl.ChucVu+ "','" + bhl.IdClb + "', '" + bhl.HinhAnh + "') ";
+                "VALUES (N'" + bhl.TenHlv + "', N'" + bhl.QuocTich + "', " +bhl.NamSinh+ ", N'" + bhl.GioiTinh + 
+                "',N'"+bhl.ChucVu+ "','" + bhl.IdClb + "', '" + bhl.HinhAnh + "') ";
             SqlConnection conn = KetNoi.connect();
             conn.Open();
             SqlCommand cmd = new SqlCommand();
@@ -114,8 +114,8 @@ namespace WebApplication7.DAL
         }
         public void editBHL(BanHuanLuyen bhl)
         {
-            string sql = "UPDATE BanHuanLuyen SET tenHlv = '" + bhl.TenHlv + "', quocTich = '" + bhl.QuocTich + 
-                "', namSinh = " + bhl.NamSinh + ", gioiTinh ='" + bhl.GioiTinh + "',chucVu = '" + bhl.ChucVu + 
+            string sql = "UPDATE BanHuanLuyen SET tenHlv = N'" + bhl.TenHlv + "', quocTich = N'" + bhl.QuocTich + 
+                "', namSinh = " + bhl.NamSinh + ", gioiTinh =N'" + bhl.GioiTinh + "',chucVu = N'" + bhl.ChucVu + 
                 "', idClb ='"+bhl.IdClb+"', hinhAnh = '" +bhl.HinhAnh+ "' WHERE idHlv =" + bhl.IdHlv;
 
             SqlConnection conn = KetNoi.connect();

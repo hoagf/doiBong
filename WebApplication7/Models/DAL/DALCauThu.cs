@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -105,22 +106,40 @@ namespace WebApplication7.DAL
             }
             conn.Close();
         }
-        public void addCauThu(CauThu ct)
+        public Boolean addCauThu(CauThu ct)
         {
            //Id tu dong tang
-            string sql = "INSERT INTO cauThu(tenCauthu, quocTich, viTri, gioiTinh, luong, namSinh, chieuCao, canNang, idClb, hinhAnh) VALUES ('"+ct.TenCauThu+"', '"+ct.QuocTich+"', '"+ct.ViTri+"', '"+ct.GioiTinh+"', "+ct.Luong+", '"+ct.NamSinh+"', "+ct.ChieuCao+", "+ct.CanNang+", '"+ct.IdClb+"', '"+ct.HinhAnh+"') ";
+            string sql = "INSERT INTO cauThu(tenCauthu, quocTich, viTri, gioiTinh, luong, namSinh, chieuCao, canNang, idClb, hinhAnh) VALUES (N'"+ct.TenCauThu+"', N'"+ct.QuocTich+"', N'"+ct.ViTri+"', N'"+ct.GioiTinh+"', "+ct.Luong+", '"+ct.NamSinh+"', "+ct.ChieuCao+", "+ct.CanNang+", '"+ct.IdClb+"', '"+ct.HinhAnh+"') ";
             SqlConnection conn = KetNoi.connect();
             conn.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
             cmd.CommandText = sql;
-            cmd.ExecuteNonQuery();
+            return cmd.ExecuteNonQuery()>0;
             cmd.Dispose();
+
+
+            //SqlCommand cmd = new SqlCommand("them", conn);
+            //cmd.CommandType = CommandType.StoredProcedure;
+            //cmd.Parameters.AddWithValue("@TenCt", SqlDbType.NVarChar).Value = ct.TenCauThu;
+            //cmd.Parameters.AddWithValue("@QuocTich", SqlDbType.NVarChar).Value = ct.QuocTich;
+            //cmd.Parameters.AddWithValue("@ViTri", SqlDbType.NVarChar).Value = ct.ViTri;
+            //cmd.Parameters.AddWithValue("@GioiTinh", SqlDbType.NVarChar).Value = ct.GioiTinh;
+            //cmd.Parameters.AddWithValue("@Luong", SqlDbType.Int).Value = ct.Luong;
+            //cmd.Parameters.AddWithValue("@NamSinh", SqlDbType.Int).Value = ct.NamSinh;
+            //cmd.Parameters.AddWithValue("@ChieuCao", SqlDbType.Int).Value = ct.ChieuCao;
+            //cmd.Parameters.AddWithValue("@CanNang", SqlDbType.Int).Value = ct.CanNang;
+            //cmd.Parameters.AddWithValue("@IDClb", SqlDbType.NVarChar).Value = ct.IdClb;
+            //cmd.Parameters.AddWithValue("@HinhAnh", SqlDbType.NVarChar).Value = ct.HinhAnh;
+            //cmd.ExecuteNonQuery();
+            cmd.Dispose();
+
+
             conn.Close();
         }
         public void editCauThu(CauThu ct)
         {
-            string sql = "UPDATE CauThu SET tenCauthu = '"+ct.TenCauThu+"', quocTich = '"+ct.QuocTich+"', viTri = '"+ct.ViTri+"', gioiTinh ='"+ct.GioiTinh+"',luong = "+ct.Luong+", namSinh="+ct.NamSinh+", chieuCao="+ct.ChieuCao+", canNang ="+ct.CanNang+", idClb = '"+ct.IdClb+"', hinhAnh = '"+ct.HinhAnh+"' WHERE idCauThu ="+ct.IdCauThu;
+            string sql = "UPDATE CauThu SET tenCauthu = N'"+ct.TenCauThu+"', quocTich = N'"+ct.QuocTich+"', viTri = N'"+ct.ViTri+"', gioiTinh = N'"+ct.GioiTinh+"',luong = "+ct.Luong+", namSinh="+ct.NamSinh+", chieuCao="+ct.ChieuCao+", canNang ="+ct.CanNang+", idClb = '"+ct.IdClb+"', hinhAnh = '"+ct.HinhAnh+"' WHERE idCauThu ="+ct.IdCauThu;
             SqlConnection conn = KetNoi.connect();
             conn.Open();
             SqlCommand cmd = new SqlCommand();
